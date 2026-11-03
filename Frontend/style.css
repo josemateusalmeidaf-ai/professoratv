@@ -1,0 +1,286 @@
+:root {
+  --azul: #123f78;
+  --azul-claro: #eaf2fc;
+  --texto: #1d2939;
+  --cinza: #667085;
+  --borda: #e4e7ec;
+  --fundo: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topo {
+  min-height: 68px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-bottom: 1px solid var(--borda);
+}
+
+.marca {
+  color: var(--azul);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.marca span {
+  color: #4d8ee8;
+}
+
+.separador {
+  margin: 0 10px;
+  color: #98a2b3;
+}
+
+.usuario {
+  color: var(--cinza);
+  font-size: 14px;
+}
+
+.container {
+  width: min(1100px, 90%);
+  margin: 38px auto;
+}
+
+.boas-vindas {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  color: #3975bb;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+h1, h2, p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: clamp(28px, 4vw, 38px);
+}
+
+.boas-vindas p:last-child,
+.cabecalho-painel p {
+  margin-bottom: 0;
+  color: var(--cinza);
+}
+
+.resumo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.card-resumo, .painel {
+  background: white;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #1d29390a;
+}
+
+.card-resumo {
+  padding: 20px;
+}
+
+.card-resumo span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--cinza);
+  font-size: 14px;
+}
+
+.card-resumo strong {
+  color: var(--azul);
+  font-size: 28px;
+}
+
+.painel {
+  margin-bottom: 20px;
+  padding: 22px;
+}
+
+.cabecalho-painel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cabecalho-painel h2 {
+  margin-bottom: 6px;
+  font-size: 19px;
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1fr 1fr auto;
+  align-items: end;
+  gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #d0d5dd;
+  border-radius: 7px;
+  color: var(--texto);
+  font: inherit;
+}
+
+input:focus {
+  outline: 2px solid #b2d2f5;
+  border-color: #528bc9;
+}
+
+button {
+  min-height: 42px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 7px;
+  background: var(--azul);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0b315f;
+}
+
+.busca {
+  max-width: 230px;
+}
+
+.tabela-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th, td {
+  padding: 13px 10px;
+  border-bottom: 1px solid var(--borda);
+  font-size: 14px;
+}
+
+th {
+  color: var(--cinza);
+  font-size: 12px;
+}
+
+.situacao {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: var(--azul-claro);
+  color: var(--azul);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.situacao.aprovado {
+  background: #e8f7ee;
+  color: #18794e;
+}
+
+.situacao.recuperacao {
+  background: #fff4db;
+  color: #9a6700;
+}
+
+.situacao.reprovado {
+  background: #fdeaea;
+  color: #b42318;
+}
+
+.remover {
+  min-height: auto;
+  padding: 7px 10px;
+  background: #fff;
+  color: #b42318;
+  border: 1px solid #f0c5c2;
+}
+
+.remover:hover {
+  background: #fff1f0;
+}
+
+.vazio {
+  display: none;
+  padding: 20px 0 4px;
+  color: var(--cinza);
+  text-align: center;
+}
+
+.nota-regra {
+  color: var(--cinza);
+  font-size: 12px;
+}
+
+@media (max-width: 850px) {
+  .formulario {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .formulario button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .resumo {
+    grid-template-columns: 1fr;
+  }
+
+  .cabecalho-painel {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .busca {
+    max-width: none;
+  }
+
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .formulario button {
+    grid-column: auto;
+  }
+
+  .topo {
+    padding: 0 5%;
+  }
+}

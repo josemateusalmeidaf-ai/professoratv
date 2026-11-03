@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Escolar</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topo">
+    <div>
+      <span class="marca">EDU<span>+</span></span>
+      <span class="separador">/</span>
+      <span>Painel escolar</span>
+    </div>
+    <span class="usuario">Administrador</span>
+  </header>
+
+  <main class="container">
+    <section class="boas-vindas">
+      <div>
+        <p class="eyebrow">GESTÃO ACADÊMICA</p>
+        <h1>Visão geral</h1>
+        <p>Cadastre alunos e acompanhe o desempenho acadêmico.</p>
+      </div>
+    </section>
+
+    <section class="resumo" aria-label="Resumo">
+      <article class="card-resumo">
+        <span>Alunos cadastrados</span>
+        <strong id="total-alunos">0</strong>
+      </article>
+      <article class="card-resumo">
+        <span>Alunos aprovados</span>
+        <strong id="total-aprovados">0</strong>
+      </article>
+      <article class="card-resumo">
+        <span>Notas pendentes</span>
+        <strong id="total-pendentes">0</strong>
+      </article>
+    </section>
+
+    <section class="painel">
+      <div class="cabecalho-painel">
+        <div>
+          <h2>Cadastrar aluno</h2>
+          <p>Preencha os dados e as notas. As notas podem ser lançadas depois.</p>
+        </div>
+      </div>
+
+      <form id="form-aluno" class="formulario">
+        <label>
+          Nome do aluno
+          <input id="nome" type="text" placeholder="Ex.: Ana Souza" required>
+        </label>
+
+        <label>
+          Matrícula
+          <input id="matricula" type="text" placeholder="Ex.: 2026001" required>
+        </label>
+
+        <label>
+          Nota N1
+          <input id="n1" type="number" min="0" max="10" step="0.1" placeholder="0 a 10">
+        </label>
+
+        <label>
+          Nota N2
+          <input id="n2" type="number" min="0" max="10" step="0.1" placeholder="0 a 10">
+        </label>
+
+        <button type="submit">Adicionar aluno</button>
+      </form>
+    </section>
+
+    <section class="painel">
+      <div class="cabecalho-painel">
+        <div>
+          <h2>Alunos</h2>
+          <p>Notas, média e situação acadêmica.</p>
+        </div>
+        <input id="busca" class="busca" type="search" placeholder="Buscar aluno...">
+      </div>
+
+      <div class="tabela-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Aluno</th>
+              <th>Matrícula</th>
+              <th>N1</th>
+              <th>N2</th>
+              <th>Média</th>
+              <th>Situação</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="lista-alunos"></tbody>
+        </table>
+        <p id="vazio" class="vazio">Ainda não há alunos cadastrados.</p>
+      </div>
+    </section>
+
+    <p class="nota-regra">
+      Regra de exemplo: média a partir de 7 = aprovado; de 5 a 6,9 = recuperação;
+      abaixo de 5 = reprovado. Ajuste aos critérios da escola.
+    </p>
+  </main>
+</body>
+</html>
