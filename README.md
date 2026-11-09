@@ -1,4 +1,4 @@
-# EDU+ — Sistema Escolar
+# Sistema Escolar
 
 Portal acadêmico modular para coordenação e professores. O front-end não requer build nem dependências: abra `Frontend/index.html` ou publique a pasta `Frontend` em um servidor estático.
 
